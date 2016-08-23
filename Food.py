@@ -21,7 +21,7 @@ class Food():
 
 # eventually we want to calculate the potential profit from the food items we have on hand.
 
-# let's test Food object
+# let's create some Food objects
 coke = Food("Coca-Cola", 3, "aisle 2", 1.45, 24, .25)
 rice = Food("rice", 10, "aisle 2", 20.89, 40, 18)
 pasta = Food("pasta", 20, "aisle 2", 1.78, 30, 8.56)
@@ -32,9 +32,7 @@ oil = Food("oil", 2, "aisle 2", 4.43, 18, 2.16)
 # store our items in an inventory,  let's use a list for now...
 inventory = [coke,rice,pasta,beans, milk, oil]
 
-# print(beans.name + "sell for $" + str(coke.unit_price)) + " each."
-# print("Which means we have a potential profit of " + beans.profit() + " for all the beans in stock.")
-
+# print a list of our items
 for item in inventory:
     print (item.name + " is in " + item.location + " and sells for $" + str(item.unit_price) + " each.")
 
@@ -45,4 +43,6 @@ for item in inventory:
     print (item.name + " $" + str(item.profit()))
     net_profit += item.profit()
 
-print("\nGrand total profit is $" + str(net_profit))
+# notice we practice using formatting here... got some help from
+#  http://www.python-course.eu/python3_formatted_output.php
+print("\nGrand total profit is $%.2f" % net_profit)
